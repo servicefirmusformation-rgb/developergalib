@@ -54,7 +54,11 @@ function Contact() {
         <aside className="space-y-5 md:col-span-2">
           <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Email</h3>
-            <p className="mt-2 text-sm">hello@galib.dev</p>
+            <a href="mailto:info.galib845@gmail.com" className="mt-2 block text-sm hover:text-primary">info.galib845@gmail.com</a>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Phone</h3>
+            <a href="tel:+8801725085863" className="mt-2 block text-sm hover:text-primary">01725085863</a>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Elsewhere</h3>
