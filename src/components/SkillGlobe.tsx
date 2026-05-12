@@ -5,9 +5,24 @@ const SKILLS = [
   "Express", "MongoDB", "Figma", "Vite", "Webpack",
 ];
 
+import { useEffect, useState } from "react";
+
 export function SkillGlobe() {
-  const radius = 220;
+  const [radius, setRadius] = useState(220);
   const total = SKILLS.length;
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 480) setRadius(130);
+      else if (w < 768) setRadius(170);
+      else if (w < 1024) setRadius(190);
+      else setRadius(220);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return (
     <div className="skill-globe">
