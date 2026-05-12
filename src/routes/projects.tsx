@@ -87,7 +87,11 @@ function Projects() {
             key={p.title}
             className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[var(--shadow-ember)]"
           >
-            <div className="mb-4 h-32 rounded-xl bg-gradient-to-br from-primary/30 to-primary/5" />
+            <div className="mb-4 flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-primary/30 to-primary/5">
+              <span className="font-display text-xs font-semibold uppercase tracking-widest text-primary/80">
+                {p.category}
+              </span>
+            </div>
             <h3 className="font-display text-lg font-semibold">{p.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
             <div className="mt-4 flex flex-wrap gap-1.5">
