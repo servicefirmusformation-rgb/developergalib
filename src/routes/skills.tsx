@@ -31,9 +31,9 @@ const GROUPS = [
 
 function Skills() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-20">
+    <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="text-sm font-medium uppercase tracking-widest text-primary">Skills</p>
-      <h1 className="mt-3 text-5xl font-bold">My <span className="text-gradient-ember">toolkit</span></h1>
+      <h1 className="mt-3 text-4xl font-bold sm:text-5xl">My <span className="text-gradient-ember">toolkit</span></h1>
       <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
         The technologies I use to design, build and ship full stack web
         applications.
