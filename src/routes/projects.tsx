@@ -97,9 +97,9 @@ const PROJECTS: Project[] = [
 
 function Projects() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="text-sm font-medium uppercase tracking-widest text-primary">Projects</p>
-      <h1 className="mt-3 text-5xl font-bold">Things I've <span className="text-gradient-ember">built</span></h1>
+      <h1 className="mt-3 text-4xl font-bold sm:text-5xl">Things I've <span className="text-gradient-ember">built</span></h1>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((p) => (
