@@ -1,5 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import shopifyFashion from "@/assets/projects/shopify-fashion.jpg";
+import shopifyElectronics from "@/assets/projects/shopify-electronics.jpg";
+import shopifyCoffee from "@/assets/projects/shopify-coffee.jpg";
+import shopifyPet from "@/assets/projects/shopify-pet.jpg";
+import wooFashion from "@/assets/projects/woo-fashion.jpg";
+import mernShop from "@/assets/projects/mern-shop.jpg";
+import dashboardImg from "@/assets/projects/dashboard.jpg";
+import bookingImg from "@/assets/projects/booking.jpg";
+
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
@@ -15,63 +24,66 @@ type Project = {
   desc: string;
   tags: string[];
   category: "Shopify" | "E-commerce" | "Web App";
+  image: string;
   url?: string;
 };
 
 const PROJECTS: Project[] = [
   {
     title: "Luxe Apparel — Shopify Store",
-    desc: "Custom Shopify storefront for a fashion brand. Built with a tailored Dawn theme, Liquid sections, mega-menu, predictive search, and a fast product page with variant swatches and sticky add-to-cart.",
+    desc: "Custom Shopify storefront for a fashion brand. Tailored Dawn theme, Liquid sections, mega-menu, predictive search, and a fast product page with variant swatches and sticky add-to-cart.",
     tags: ["Shopify", "Liquid", "Dawn Theme", "JavaScript"],
     category: "Shopify",
-    url: "#",
+    image: shopifyFashion,
   },
   {
     title: "GadgetHub — Shopify Plus Migration",
-    desc: "Migrated an electronics retailer from WooCommerce to Shopify Plus. Imported 4k+ SKUs, set up metafields, custom bundles, Shopify Markets for multi-currency, and Klaviyo flows for abandoned cart.",
+    desc: "Migrated an electronics retailer from WooCommerce to Shopify Plus. Imported 4k+ SKUs, set up metafields, custom bundles, Shopify Markets for multi-currency, and Klaviyo abandoned-cart flows.",
     tags: ["Shopify Plus", "Liquid", "Klaviyo", "Metafields"],
     category: "Shopify",
-    url: "#",
+    image: shopifyElectronics,
   },
   {
     title: "BrewCraft Coffee — Subscription Store",
     desc: "Headless Shopify store with a React storefront using the Storefront API. Recharge-powered coffee subscriptions, build-a-box flow, and one-page checkout customizations.",
     tags: ["Shopify", "Storefront API", "React", "Recharge"],
     category: "Shopify",
-    url: "#",
+    image: shopifyCoffee,
   },
   {
     title: "PetParadise — Custom Shopify Theme",
     desc: "Pet supplies store built from scratch on Shopify. Custom Liquid sections, AJAX cart drawer, product reviews, upsell modals, and Google Merchant feed integration.",
     tags: ["Shopify", "Liquid", "SCSS", "Alpine.js"],
     category: "Shopify",
-    url: "#",
+    image: shopifyPet,
   },
   {
     title: "Fashionly — WooCommerce Store",
     desc: "Full WooCommerce store for a clothing brand with custom PHP plugins, size-guide popups, wishlist, Stripe + SSLCommerz checkout, and bKash payment gateway.",
     tags: ["WordPress", "WooCommerce", "PHP", "Stripe"],
     category: "E-commerce",
-    url: "#",
+    image: wooFashion,
   },
   {
     title: "ShopKart — MERN E-commerce",
     desc: "Full-stack e-commerce app with React, Node.js, Express and MongoDB. JWT auth, admin dashboard, order management, Stripe payments, and product search with filters.",
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
     category: "E-commerce",
-    url: "#",
+    image: mernShop,
   },
   {
     title: "Commerce Dashboard",
     desc: "Admin dashboard for tracking sales, inventory and customers — built with React and a PHP + MySQL backend with charts and CSV export.",
     tags: ["React", "PHP", "MySQL"],
     category: "Web App",
+    image: dashboardImg,
   },
   {
     title: "Booking Platform",
     desc: "End-to-end booking system with calendar sync, Stripe deposits and email notifications.",
     tags: ["PHP", "Laravel", "MySQL"],
     category: "Web App",
+    image: bookingImg,
   },
 ];
 
@@ -87,8 +99,16 @@ function Projects() {
             key={p.title}
             className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[var(--shadow-ember)]"
           >
-            <div className="mb-4 flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-primary/30 to-primary/5">
-              <span className="font-display text-xs font-semibold uppercase tracking-widest text-primary/80">
+            <div className="relative mb-4 h-40 overflow-hidden rounded-xl border border-border/60">
+              <img
+                src={p.image}
+                alt={`${p.title} preview`}
+                width={800}
+                height={512}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-background/80 px-2.5 py-0.5 font-display text-[10px] font-semibold uppercase tracking-widest text-primary backdrop-blur">
                 {p.category}
               </span>
             </div>
