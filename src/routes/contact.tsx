@@ -15,9 +15,9 @@ function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section className="mx-auto max-w-4xl px-6 py-20">
+    <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="text-sm font-medium uppercase tracking-widest text-primary">Contact</p>
-      <h1 className="mt-3 text-5xl font-bold">Let's <span className="text-gradient-ember">work together</span></h1>
+      <h1 className="mt-3 text-4xl font-bold sm:text-5xl">Let's <span className="text-gradient-ember">work together</span></h1>
       <p className="mt-4 max-w-xl text-lg text-muted-foreground">
         Have a project in mind or just want to say hi? Drop a message below
         and I'll get back to you soon.
