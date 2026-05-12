@@ -12,9 +12,9 @@ export const Route = createFileRoute("/about")({
 
 function About() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-20">
+    <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="text-sm font-medium uppercase tracking-widest text-primary">About</p>
-      <h1 className="mt-3 text-5xl font-bold">A bit about <span className="text-gradient-ember">me</span></h1>
+      <h1 className="mt-3 text-4xl font-bold sm:text-5xl">A bit about <span className="text-gradient-ember">me</span></h1>
 
       <div className="mt-10 grid gap-10 md:grid-cols-3">
         <div className="md:col-span-2 space-y-5 text-lg leading-relaxed text-muted-foreground">

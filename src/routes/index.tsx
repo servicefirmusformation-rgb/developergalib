@@ -24,20 +24,20 @@ function Home() {
       <Starfield />
 
       <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-10 px-6 py-12 lg:grid-cols-2">
-        <div className="animate-float-up relative z-10">
+        <div className="animate-float-up relative z-10 text-center lg:text-left">
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Available for work
           </p>
-          <h1 className="text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
             Hi, I'm <span className="text-gradient-ember">Galib</span>
             <br />
             <span className="text-muted-foreground">a Web Developer</span>
           </h1>
-          <p className="mt-6 max-w-md text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-md text-base text-muted-foreground sm:text-lg lg:mx-0">
             I build fast, accessible, and beautiful web experiences from
             front-end pixels to back-end logic.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <Link
               to="/projects"
               className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-ember)] transition-transform hover:scale-105"
@@ -53,7 +53,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="relative h-[500px] w-full lg:h-[600px]">
+        <div className="relative h-[340px] w-full sm:h-[440px] lg:h-[600px]">
           <SkillGlobe />
         </div>
       </div>
