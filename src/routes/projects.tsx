@@ -8,6 +8,7 @@ import wooFashion from "@/assets/projects/woo-fashion.jpg";
 import mernShop from "@/assets/projects/mern-shop.jpg";
 import dashboardImg from "@/assets/projects/dashboard.jpg";
 import bookingImg from "@/assets/projects/booking.jpg";
+import shopifyBeauty from "@/assets/projects/shopify-beauty.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -56,6 +57,13 @@ const PROJECTS: Project[] = [
     tags: ["Shopify", "Liquid", "SCSS", "Alpine.js"],
     category: "Shopify",
     image: shopifyPet,
+  },
+  {
+    title: "GlowSkin — Shopify Beauty Store",
+    desc: "Skincare and beauty Shopify store with custom landing pages, ingredient highlights, quiz-based product recommendations, Judge.me reviews, and a loyalty rewards program via Smile.io.",
+    tags: ["Shopify", "Liquid", "Smile.io", "Judge.me"],
+    category: "Shopify",
+    image: shopifyBeauty,
   },
   {
     title: "Fashionly — WooCommerce Store",
