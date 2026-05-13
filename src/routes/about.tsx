@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -11,6 +13,20 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
+  const [c, setC] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    supabase
+      .from("site_content")
+      .select("key,value")
+      .in("key", ["about_p1", "about_p2", "about_p3"])
+      .then(({ data }) => {
+        const m: Record<string, string> = {};
+        (data ?? []).forEach((r: { key: string; value: string }) => (m[r.key] = r.value));
+        setC(m);
+      });
+  }, []);
+
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="text-sm font-medium uppercase tracking-widest text-primary">About</p>
@@ -18,20 +34,9 @@ function About() {
 
       <div className="mt-10 grid gap-10 md:grid-cols-3">
         <div className="md:col-span-2 space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>
-            I'm Galib, a full stack web developer who loves turning ideas into
-            real, working products. I work across the stack — from crafting
-            polished interfaces in React to designing solid databases in MySQL.
-          </p>
-          <p>
-            For me, great software is a balance: fast and accessible on the
-            outside, clean and maintainable on the inside. I care about
-            details, performance, and shipping things people enjoy using.
-          </p>
-          <p>
-            When I'm not coding, I'm usually exploring new tools, contributing
-            to small side projects, or learning something completely new.
-          </p>
+          {c.about_p1 && <p>{c.about_p1}</p>}
+          {c.about_p2 && <p>{c.about_p2}</p>}
+          {c.about_p3 && <p>{c.about_p3}</p>}
         </div>
         <aside className="rounded-2xl border border-border bg-card p-6">
           <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Quick facts</h3>
