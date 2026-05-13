@@ -15,10 +15,10 @@ export const Route = createFileRoute("/admin")({
 
 const NAV = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
-  { to: "/admin/projects", label: "Projects", icon: FolderKanban },
-  { to: "/admin/skills", label: "Skills", icon: Wrench },
-  { to: "/admin/messages", label: "Messages", icon: Mail },
-  { to: "/admin/content", label: "Site Content", icon: FileText },
+  { to: "/admin/projects", label: "Projects", icon: FolderKanban, exact: false },
+  { to: "/admin/skills", label: "Skills", icon: Wrench, exact: false },
+  { to: "/admin/messages", label: "Messages", icon: Mail, exact: false },
+  { to: "/admin/content", label: "Site Content", icon: FileText, exact: false },
 ] as const;
 
 function AdminLayout() {
