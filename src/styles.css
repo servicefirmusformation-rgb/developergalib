@@ -123,7 +123,7 @@
 
 @layer utilities {
   .text-gradient-ember {
-    background: linear-gradient(135deg, oklch(0.78 0.2 38), oklch(0.6 0.19 30));
+    background: linear-gradient(135deg, oklch(0.78 0.15 52), oklch(0.66 0.16 42));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
