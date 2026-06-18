@@ -51,6 +51,37 @@ function About() {
           </ul>
         </aside>
       </div>
+
+      {/* Career timeline */}
+      <div className="mt-20">
+        <p className="text-sm font-medium uppercase tracking-widest text-primary">Journey</p>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">My career <span className="text-gradient-ember">timeline</span></h2>
+        <ol className="relative mt-10 space-y-8 border-l border-border pl-8">
+          {TIMELINE.map((t, i) => (
+            <Reveal key={t.year} delay={i * 90}>
+              <li className="relative">
+                <span className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary">{t.year}</p>
+                <h3 className="mt-1 font-display text-lg font-semibold">{t.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>
+              </li>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+
+      {/* Achievements */}
+      <div className="mt-20">
+        <p className="text-sm font-medium uppercase tracking-widest text-primary">Highlights</p>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Key <span className="text-gradient-ember">achievements</span></h2>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          {ACHIEVEMENTS.map((a) => (
+            <li key={a} className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {a}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
