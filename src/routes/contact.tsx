@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { z } from "zod";
+import { Github, Linkedin, Mail, Clock, Download } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -83,18 +84,50 @@ function Contact() {
         </form>
 
         <aside className="space-y-5 md:col-span-2">
-          {content.email && (
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Email</h3>
-              <a href={`mailto:${content.email}`} className="mt-2 block text-sm hover:text-primary">{content.email}</a>
-            </div>
-          )}
+          <div className="rounded-2xl border border-primary/30 bg-card p-6">
+            <p className="inline-flex items-center gap-2 text-sm font-semibold">
+              <span className="h-2 w-2 rounded-full bg-primary" /> Available for new projects
+            </p>
+            <p className="mt-3 inline-flex items-center gap-2 text-sm text-muted-foreground">
+              <Clock className="h-4 w-4 text-primary" /> Responds within 24 hours
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Email</h3>
+            <a href={`mailto:${content.email || "developer.galib@example.com"}`} className="mt-2 block text-sm hover:text-primary">
+              {content.email || "developer.galib@example.com"}
+            </a>
+          </div>
+
           {content.phone && (
             <div className="rounded-2xl border border-border bg-card p-6">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Phone</h3>
               <a href={`tel:${content.phone}`} className="mt-2 block text-sm hover:text-primary">{content.phone}</a>
             </div>
           )}
+
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-primary">Connect</h3>
+            <div className="mt-3 flex gap-3">
+              <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub" className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary">
+                <Github className="h-4 w-4" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="mailto:developer.galib@example.com" aria-label="Email" className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary">
+                <Mail className="h-4 w-4" />
+              </a>
+            </div>
+            <a
+              href="/Galib-Resume.txt"
+              download
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-ember)] transition-transform hover:scale-105"
+            >
+              <Download className="h-4 w-4" /> Download Résumé
+            </a>
+          </div>
         </aside>
       </div>
     </section>
