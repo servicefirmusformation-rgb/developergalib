@@ -4,12 +4,11 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: "div" | "section" | "article" | "li";
 };
 
 /** Lightweight scroll-reveal wrapper using IntersectionObserver. */
-export function Reveal({ children, className = "", delay = 0, as = "div" }: RevealProps) {
-  const ref = useRef<HTMLElement | null>(null);
+export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
@@ -34,10 +33,8 @@ export function Reveal({ children, className = "", delay = 0, as = "div" }: Reve
     return () => io.disconnect();
   }, []);
 
-  const Tag = as as keyof JSX.IntrinsicElements;
   return (
-    <Tag
-      // @ts-expect-error ref typing across element variants
+    <div
       ref={ref}
       className={`transition-all duration-700 ease-out ${
         shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -45,6 +42,6 @@ export function Reveal({ children, className = "", delay = 0, as = "div" }: Reve
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }
