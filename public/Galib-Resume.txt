@@ -1,0 +1,33 @@
+GALIB — FULL STACK WEB DEVELOPER
+=================================
+
+Contact: developer.galib@example.com
+Portfolio: https://developer-galib.lovable.app
+
+SUMMARY
+-------
+Full stack web developer with 5+ years of experience building fast,
+accessible, and scalable web applications — from pixel-perfect front-ends
+to robust back-end systems and eCommerce platforms.
+
+CORE SKILLS
+-----------
+Frontend: React, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, Bootstrap
+Backend:  Node.js, Express, PHP, Laravel
+Database: MySQL, MongoDB
+Tools:    Git, Vite, Webpack, Figma, REST APIs
+eCommerce: Shopify, WooCommerce
+
+EXPERIENCE
+----------
+2024 — Now   Senior Full Stack Developer
+2022 — 2024  Full Stack Developer
+2020 — 2022  Frontend Developer
+2019 — 2020  Started Web Development
+
+CERTIFICATIONS
+--------------
+- Meta Front-End Developer (Meta, 2023)
+- Full Stack Web Development (freeCodeCamp, 2022)
+- Shopify Theme Development (Shopify Partners, 2023)
+- JavaScript Algorithms & Data Structures (freeCodeCamp, 2021)
