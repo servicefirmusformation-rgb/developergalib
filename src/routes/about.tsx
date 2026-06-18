@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Check } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { Reveal } from "@/components/Reveal";
+import { TIMELINE, ACHIEVEMENTS } from "@/lib/portfolioContent";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
