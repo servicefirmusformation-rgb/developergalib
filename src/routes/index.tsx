@@ -6,6 +6,7 @@ import { Starfield } from "../components/Starfield";
 import { Reveal } from "../components/Reveal";
 import { AnimatedCounter } from "../components/AnimatedCounter";
 import { HERO_STATS, SERVICES, TESTIMONIALS, CERTIFICATIONS } from "@/lib/portfolioContent";
+import { SkillCategories } from "@/components/SkillCategories";
 import { supabase } from "@/integrations/supabase/client";
 import { resolveProjectImage } from "@/lib/projectImages";
 
@@ -41,12 +42,11 @@ type FeaturedProject = {
   slug: string | null;
 };
 
-type Skill = { id: string; name: string; category: string };
+
 
 function Home() {
   const [c, setC] = useState<Record<string, string>>(DEFAULTS);
   const [projects, setProjects] = useState<FeaturedProject[]>([]);
-  const [skills, setSkills] = useState<Skill[]>([]);
 
   useEffect(() => {
     supabase
@@ -67,13 +67,6 @@ function Home() {
       .order("display_order", { ascending: true })
       .limit(3)
       .then(({ data }) => setProjects((data ?? []) as FeaturedProject[]));
-
-    supabase
-      .from("skills")
-      .select("id,name,category")
-      .order("category")
-      .order("display_order")
-      .then(({ data }) => setSkills((data ?? []) as Skill[]));
   }, []);
 
   const titleWords = c.hero_title.split(" ");
@@ -217,27 +210,22 @@ function Home() {
       </section>
 
       {/* Skills preview */}
-      {skills.length > 0 && (
-        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">Tech stack</p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Tools I <span className="text-gradient-ember">work with</span></h2>
-          <div className="mt-8 flex flex-wrap gap-2.5">
-            {skills.map((s) => (
-              <span
-                key={s.id}
-                className="rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-secondary-foreground transition-colors hover:border-primary/50 hover:text-foreground"
-              >
-                {s.name}
-              </span>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link to="/skills" className="text-sm font-semibold text-primary transition-colors hover:text-foreground">
-              Explore my full toolkit →
-            </Link>
-          </div>
-        </section>
-      )}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <p className="text-sm font-medium uppercase tracking-widest text-primary">Tech stack</p>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Tools I <span className="text-gradient-ember">work with</span></h2>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          The orbit shows my stack in motion — here's a categorized breakdown with official brand icons.
+        </p>
+        <div className="mt-10">
+          <SkillCategories />
+        </div>
+        <div className="mt-8">
+          <Link to="/skills" className="text-sm font-semibold text-primary transition-colors hover:text-foreground">
+            Explore my full toolkit →
+          </Link>
+        </div>
+      </section>
+
 
       {/* About teaser */}
       <section className="border-y border-border/50 bg-card/30">

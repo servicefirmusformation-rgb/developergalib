@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { SkillCategories } from "@/components/SkillCategories";
 
 export const Route = createFileRoute("/skills")({
   head: () => ({
@@ -53,6 +54,17 @@ function Skills() {
             </div>
           );
         })}
+      </div>
+
+      <div className="mt-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-primary">Tech stack</p>
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Skills by <span className="text-gradient-ember">category</span></h2>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          A categorized overview of the technologies I work with — each with its official brand icon.
+        </p>
+        <div className="mt-10">
+          <SkillCategories />
+        </div>
       </div>
     </section>
   );
