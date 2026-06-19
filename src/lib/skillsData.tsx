@@ -34,7 +34,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: "Frontend",
     items: [
       { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS3", Icon: SiCss3, color: "#1572B6" },
+      { name: "CSS3", Icon: SiCss, color: "#1572B6" },
       { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
       { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
       { name: "React.js", Icon: SiReact, color: "#61DAFB" },
