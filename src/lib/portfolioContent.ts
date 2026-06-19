@@ -66,5 +66,5 @@ export const ACHIEVEMENTS = [
   "Delivered 30+ production projects across eCommerce, SaaS and dashboards",
   "Improved client site performance scores to 90+ on Core Web Vitals",
   "Built reusable component systems adopted across multiple teams",
-  "Maintained a 100% client satisfaction rate with long-term partnerships",
+  "Maintained a 99% client satisfaction rate with long-term partnerships",
 ];
