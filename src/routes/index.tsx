@@ -6,6 +6,7 @@ import { Starfield } from "../components/Starfield";
 import { Reveal } from "../components/Reveal";
 import { AnimatedCounter } from "../components/AnimatedCounter";
 import { HERO_STATS, SERVICES, TESTIMONIALS, CERTIFICATIONS } from "@/lib/portfolioContent";
+import { SkillCategories } from "@/components/SkillCategories";
 import { supabase } from "@/integrations/supabase/client";
 import { resolveProjectImage } from "@/lib/projectImages";
 
