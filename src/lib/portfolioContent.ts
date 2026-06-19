@@ -10,10 +10,10 @@ import {
 } from "lucide-react";
 
 export const HERO_STATS = [
-  { label: "Projects Completed", value: 50, suffix: "+" },
+  { label: "Projects Completed", value: 30, suffix: "+" },
   { label: "Technologies", value: 25, suffix: "+" },
-  { label: "Years Experience", value: 5, suffix: "+" },
-  { label: "Client Satisfaction", value: 100, suffix: "%" },
+  { label: "Years Experience", value: 1, suffix: "+" },
+  { label: "Client Satisfaction", value: 99, suffix: "%" },
 ];
 
 export const SERVICES = [
