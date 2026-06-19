@@ -42,7 +42,7 @@ type FeaturedProject = {
   slug: string | null;
 };
 
-type Skill = { id: string; name: string; category: string };
+
 
 function Home() {
   const [c, setC] = useState<Record<string, string>>(DEFAULTS);
