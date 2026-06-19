@@ -67,13 +67,6 @@ function Home() {
       .order("display_order", { ascending: true })
       .limit(3)
       .then(({ data }) => setProjects((data ?? []) as FeaturedProject[]));
-
-    supabase
-      .from("skills")
-      .select("id,name,category")
-      .order("category")
-      .order("display_order")
-      .then(({ data }) => setSkills((data ?? []) as Skill[]));
   }, []);
 
   const titleWords = c.hero_title.split(" ");
