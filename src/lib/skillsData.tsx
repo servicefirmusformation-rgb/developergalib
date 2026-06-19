@@ -1,7 +1,7 @@
 import type { IconType } from "react-icons";
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiTypescript,
   SiReact,
