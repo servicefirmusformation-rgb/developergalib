@@ -21,7 +21,13 @@ export function SiteLayout() {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen text-foreground">
+      <div
+        aria-hidden
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgLandscape.url})` }}
+      />
+      <div aria-hidden className="fixed inset-0 -z-10 bg-background/80 backdrop-blur-[1px]" />
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/70 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
           <Link to="/" className="font-display text-lg font-bold tracking-tight">
