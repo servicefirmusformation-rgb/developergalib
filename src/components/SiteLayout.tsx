@@ -2,6 +2,7 @@ import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { BackToTop } from "./BackToTop";
+import bgLandscape from "../assets/bg-landscape.jpg.asset.json";
 
 const NAV = [
   { to: "/", label: "Home" },
