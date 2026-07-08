@@ -12,4 +12,9 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  // Deploy target. Inside the Lovable sandbox the preset is forced to
+  // Cloudflare (this override is ignored there), so the preview keeps working.
+  // Outside Lovable (e.g. building on Vercel's CI), this pins the Vercel
+  // preset so Nitro emits a Vercel Build Output API bundle in .vercel/output.
+  nitro: { preset: "vercel" },
 });
