@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { BackToTop } from "./BackToTop";
 import bgLandscape from "../assets/bg-landscape.jpg.asset.json";
+import galibLogo from "../assets/galib-logo.png.asset.json";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -30,9 +31,18 @@ export function SiteLayout() {
       <div aria-hidden className="fixed inset-0 -z-10 bg-background/80 backdrop-blur-[1px]" />
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/70 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-          <Link to="/" className="font-display text-lg font-bold tracking-tight">
-            <span className="text-gradient-ember">Galib</span>
-            <span className="text-muted-foreground">.dev</span>
+          <Link to="/" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
+            <img
+              src={galibLogo.url}
+              alt="Galib logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 shrink-0 object-contain"
+            />
+            <span>
+              <span className="text-gradient-ember">Galib</span>
+              <span className="text-muted-foreground">.dev</span>
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -94,9 +104,19 @@ export function SiteLayout() {
       <footer className="border-t border-border/50 bg-card/30">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
           <div>
-            <Link to="/" className="font-display text-lg font-bold tracking-tight">
-              <span className="text-gradient-ember">Galib</span>
-              <span className="text-muted-foreground">.dev</span>
+            <Link to="/" className="inline-flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
+              <img
+                src={galibLogo.url}
+                alt="Galib logo"
+                width={36}
+                height={36}
+                loading="lazy"
+                className="h-9 w-9 shrink-0 object-contain"
+              />
+              <span>
+                <span className="text-gradient-ember">Galib</span>
+                <span className="text-muted-foreground">.dev</span>
+              </span>
             </Link>
             <p className="mt-3 max-w-xs text-sm text-muted-foreground">
               Full stack web developer crafting fast, accessible, and modern web experiences.
