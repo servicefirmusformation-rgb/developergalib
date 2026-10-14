@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { BackToTop } from "./BackToTop";
 import bgLandscape from "../assets/bg-landscape.jpg.asset.json";
-import galibLogo from "../assets/galib-logo.png.asset.json";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -33,7 +32,7 @@ export function SiteLayout() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
           <Link to="/" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
             <img
-              src={galibLogo.url}
+              src="/favicon.png"
               alt="Galib logo"
               width={36}
               height={36}
@@ -106,7 +105,7 @@ export function SiteLayout() {
           <div>
             <Link to="/" className="inline-flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
               <img
-                src={galibLogo.url}
+                src="/favicon.png"
                 alt="Galib logo"
                 width={36}
                 height={36}
